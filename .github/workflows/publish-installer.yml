@@ -6,23 +6,23 @@ on:
       - published
 
 jobs:
-  docker:
+  buildarr-installer:
     runs-on: ubuntu-22.04
     steps:
       - name: Install Python
         uses: actions/setup-python@v4
         with:
           python-version: "3.11"
-      - name: Update APT package metadata
+      - name: Update package metadata
         run: sudo apt-get update
-      - name: Install NSIS
-        run: sudo apt-get install -y nsis
+      - name: Install system packages
+        run: sudo apt-get install -y make nsis
       - name: Install pynsist
         run: python -m pip install pynsist
       - name: Check out the repository
         uses: actions/checkout@v4
       - name: Build Buildarr installer
-        run: pynsist installer.cfg
+        run: make
       - name: Upload Buildarr installer to release
         uses: xresloader/upload-to-github-release@v1
         env:
