@@ -1,0 +1,34 @@
+name: Publish Buildarr installer
+
+on:
+  release:
+    types:
+      - published
+  workflow_dispatch:
+
+jobs:
+  docker:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Install Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+      - name: Update APT package metadata
+        run: apt-get update
+      - name: Install NSIS
+        run: apt-get install -y nsis
+      - name: Install pynsist
+        run: python -m pip install pynsist
+      - name: Check out the repository
+        uses: actions/checkout@v4
+      - name: Build Buildarr installer
+        run: pynsist installer.cfg
+      - name: Upload Buildarr installer to release
+        uses: xresloader/upload-to-github-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          file: build/nsis/buildarr-installer-*.exe
+          release_id: ${{ github.event.release.id }}
+          overwrite: true
