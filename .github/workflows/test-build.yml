@@ -1,6 +1,9 @@
 name: Test Buildarr installer build
 
 on:
+  push:
+    branches:
+      - main
   pull_request:
   workflow_dispatch:
 
