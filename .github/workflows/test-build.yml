@@ -46,6 +46,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: wheels
+          path: wheels
       - name: Build Buildarr installer
         run: pynsist installer.cfg
       - name: Compress package build artifacts
