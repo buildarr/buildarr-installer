@@ -25,6 +25,7 @@ jobs:
           retention-days: 5
 
   buildarr-installer:
+    needs: wheels
     runs-on: ubuntu-22.04
     steps:
       - name: Install Python
