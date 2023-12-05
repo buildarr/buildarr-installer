@@ -1,6 +1,6 @@
 # Buildarr Installer
 
-![GitHub release (with filter)](https://img.shields.io/github/v/release/buildarr/buildarr-installer) ![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/buildarr/buildarr-installer/test-build.yml)
+![GitHub release (with filter)](https://img.shields.io/github/v/release/buildarr/buildarr-installer) ![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/buildarr/buildarr-installer/test-build.yml) ![GitHub License](https://img.shields.io/github/license/buildarr/buildarr-installer)
 
 This repository builds and hosts Windows installers for [Buildarr](https://buildarr.github.io), based on the [Nullsoft Scriptable Install System](https://en.wikipedia.org/wiki/Nullsoft_Scriptable_Install_System).
 
