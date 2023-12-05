@@ -28,6 +28,8 @@ jobs:
 
   buildarr-installer:
     needs: wheels
+    permissions:
+      contents: write
     runs-on: ubuntu-22.04
     steps:
       - name: Install Python
