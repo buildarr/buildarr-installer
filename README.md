@@ -16,7 +16,7 @@ Installer builds are automatically tested using GitHub Actions for pull requests
 
 [Workflow runs can be manually executed](https://github.com/buildarr/buildarr-installer/actions/workflows/test-build.yml), if builds against standard branches are required.
 
-## Releasing a new version
+### Releasing a new version
 
 Create a new release manually, as normal. No additional actions are required.
 
